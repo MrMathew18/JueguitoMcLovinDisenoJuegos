@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://c7xni8u0ctepm"]
+
+[ext_resource type="Script" uid="uid://dj2cm3hrjvumc" path="res://Scripts/fogel_real_asi_real.gd" id="1_6ayxn"]
+[ext_resource type="Texture2D" uid="uid://6u8j5lv4ucrk" path="res://Assets/brackeys_platformer_assets/sprites/knight.png" id="1_66jbu"]
+[ext_resource type="Texture2D" uid="uid://d008xhb7kk47f" path="res://Assets/8bff4a7645a1a2f322e0add49180cef8-removebg-preview.png" id="2_6ayxn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bibbe"]
+atlas = ExtResource("1_66jbu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0dk5"]
+atlas = ExtResource("1_66jbu")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_coqal"]
+atlas = ExtResource("1_66jbu")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtc44"]
+atlas = ExtResource("1_66jbu")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f0qc7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bibbe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0dk5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_coqal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtc44")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5ienu"]
+radius = 4.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xi8f"]
+atlas = ExtResource("2_6ayxn")
+region = Rect2(0, 0, 398, 490)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kf2ql"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xi8f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Fogel real asi real" type="CharacterBody2D"]
+script = ExtResource("1_6ayxn")
+
+[node name="caballerito prueba" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -12)
+sprite_frames = SubResource("SpriteFrames_f0qc7")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.8130886
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_5ienu")
+
+[node name="Mclovin (reemplazar con frames)" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -15.000002)
+scale = Vector2(0.04169284, 0.041692838)
+sprite_frames = SubResource("SpriteFrames_kf2ql")
