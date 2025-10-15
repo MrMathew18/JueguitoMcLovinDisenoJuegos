@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cma5vv8avcyy8"]
+
+[ext_resource type="Script" uid="uid://dpcjdhd8aytwh" path="res://node_2d.gd" id="1_6xxr2"]
+[ext_resource type="Script" uid="uid://b3tynuu6wmnn4" path="res://Scripts/area_2dword.gd" id="2_781ea"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_6xxr2")
+
+[node name="Word" type="Area2D" parent="."]
+script = ExtResource("2_781ea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Word"]
+
+[node name="Label" type="Label" parent="Word"]
+offset_right = 40.0
+offset_bottom = 23.0

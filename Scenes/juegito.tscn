@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bvgpnda60f1ut"]
 
 [ext_resource type="PackedScene" uid="uid://c7xni8u0ctepm" path="res://Scenes/fogel_real_asi_real.tscn" id="1_3aahx"]
-[ext_resource type="PackedScene" uid="uid://bke1nw6nive64" path="res://Scenes/words.tscn" id="2_0nyj7"]
+[ext_resource type="Script" uid="uid://bbixx42wwyoqc" path="res://Scripts/canvas_layer.gd" id="3_wvfe8"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3aahx"]
 
@@ -43,5 +43,17 @@ shape = SubResource("WorldBoundaryShape2D_4go2j")
 position = Vector2(147, -48)
 shape = SubResource("WorldBoundaryShape2D_wvfe8")
 
-[node name="Words" parent="StaticBody2D" instance=ExtResource("2_0nyj7")]
-position = Vector2(21, -99)
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("3_wvfe8")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Word" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Word"]
+
+[node name="Label" type="Label" parent="Word"]
+offset_right = 40.0
+offset_bottom = 23.0
