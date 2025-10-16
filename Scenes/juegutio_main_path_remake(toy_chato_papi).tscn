@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://np52frgr3mqs"]
+
+[ext_resource type="PackedScene" uid="uid://c7xni8u0ctepm" path="res://Scenes/fogel_real_asi_real.tscn" id="1_s0aev"]
+[ext_resource type="PackedScene" uid="uid://b0g8pwspxa3dk" path="res://Scenes/palabrita.tscn" id="2_q72iw"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_q72iw"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ghc5d"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tn1rd"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rj8x1"]
+normal = Vector2(-1, 0)
+
+[node name="Juegutio main Path" type="Node2D"]
+
+[node name="Fogel real asi real" parent="." instance=ExtResource("1_s0aev")]
+position = Vector2(-2, -1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Fogel real asi real"]
+position = Vector2(0, 48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fogel real asi real/StaticBody2D"]
+position = Vector2(1, 37)
+shape = SubResource("WorldBoundaryShape2D_q72iw")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Fogel real asi real/StaticBody2D"]
+position = Vector2(0, -132)
+shape = SubResource("WorldBoundaryShape2D_ghc5d")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Fogel real asi real/StaticBody2D"]
+position = Vector2(-145, -48)
+shape = SubResource("WorldBoundaryShape2D_tn1rd")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Fogel real asi real/StaticBody2D"]
+position = Vector2(147, -48)
+shape = SubResource("WorldBoundaryShape2D_rj8x1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-1, 0)
+zoom = Vector2(3.995, 3.995)
+
+[node name="Area2D" parent="." instance=ExtResource("2_q72iw")]
+position = Vector2(-78, -39)
